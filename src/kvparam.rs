@@ -41,6 +41,11 @@ impl KVParams {
     self.hm
   }
 
+  /// Get a read-only reference to the internal key/value container.
+  pub fn get_params(&self) -> &HashMap<String, String> {
+    &self.hm
+  }
+
   /// Add a parameter to the message.
   pub fn add_param<T: ToString, U: ToString>(
       &mut self,
