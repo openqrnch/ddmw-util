@@ -23,7 +23,7 @@ impl KVParams {
 
   /// Take ownership of a HashMap and create a key-value parameter object from
   /// it.
-  pub fn from_hashmap(&mut self, hm: HashMap<String, String>) -> Self {
+  pub fn from_hashmap(hm: HashMap<String, String>) -> Self {
     KVParams { hm }
   }
 
