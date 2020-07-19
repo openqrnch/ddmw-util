@@ -82,11 +82,11 @@ parameter '{}'", key)));
   }
 
   #[cfg(feature = "bytes")]
-  pub fn write_bytes(&self, buf: &mut BytesMut) -> Result<(), Error> {
+  pub fn write_bytes(&self, buf: &mut BytesMut) {
     // Calculate the required buffer size
     let sz = self.calc_buf_size();
     if sz == 0 {
-      return Ok(());
+      return;
     }
 
     // Reserve space
@@ -100,8 +100,6 @@ parameter '{}'", key)));
       buf.put_u8(b'\n');
     }
     buf.put_u8(b'\n');
-
-    Ok(())
   }
 }
 
